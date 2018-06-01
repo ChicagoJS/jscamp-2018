@@ -10,7 +10,7 @@ import PageHeader from '../components/PageHeader'
 
 const CONFIG = {
   title: 'JSCamp 2018',
-  date: 'September 29, 2018',
+  date: 'September 22, 2018',
   city: 'Chicago, IL',
   images: {
     hero: 'https://source.unsplash.com/75vZiZuLHWc/1200x400',

@@ -7,7 +7,7 @@ import ImageRow from '../components/ImageRow'
 const TICKET_LINK = 'https://ti.to/chicagojs/chicago-js-camp-2018'
 const CONFIG = {
   title: 'JSCamp 2018',
-  date: 'September 29, 2018',
+  date: 'September 22, 2018',
   city: 'Chicago, IL',
   images: {
     hero: 'https://source.unsplash.com/75vZiZuLHWc/1200x400',
