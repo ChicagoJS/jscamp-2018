@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import Section from '../components/Section'
 import ImageRow from '../components/ImageRow'
 
+const TICKET_LINK = 'https://ti.to/chicagojs/chicago-js-camp-2018'
 const CONFIG = {
   title: 'JSCamp 2018',
   date: 'September 29, 2018',
@@ -41,7 +42,7 @@ export default class HomePage extends React.Component {
               <a href={cfpLink} className="mr-2 btn btn-primary">
                 CALL FOR PAPERS
               </a>
-              <a href="#" className="btn btn-primary">
+              <a href={TICKET_LINK} className="btn btn-primary">
                 BUY TICKETS
               </a>
             </div>
