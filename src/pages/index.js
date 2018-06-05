@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 import Section from '../components/Section'
 import ImageRow from '../components/ImageRow'
@@ -35,6 +36,10 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Helmet
+          title="JSCamp Chicago"
+          description={`Chicago's first single track Javascript conference for developers`}
+        />
         <Section
           text="JSCamp is a one day single track conference for developers interested in Javascript. Speakers are covering topics such as Node, React, Vue, Ember for both beginners and experts. Come check out Chicago and meet the developers you hear about online!"
           cta={() => (
