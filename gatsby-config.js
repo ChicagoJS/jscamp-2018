@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'JSCamp Chicago',
+    title: 'JSCamp 2018',
     description: `Chicago's first 1-day Javascript conference featuring Node, React, Ember, Vue`,
-    siteUrl: 'https://jscamp.com',
-    author: 'JSCamp',
-    twitter: 'jscamp',
+    siteUrl: 'https://www.chicagojs.org',
+    author: 'ChicagoJS',
+    twitter: 'chicago_js',
     adsense: '',
   },
   pathPrefix: '/',
@@ -34,7 +34,6 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1.0725rem',
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
@@ -43,10 +42,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatstrap',
-        short_name: 'Gatstrap',
-        description: 'Gatsby starter for bootstrap a blog',
-        homepage_url: 'https://gatstrap.netlify.com',
+        name: 'JSCamp 2918',
+        short_name: 'jscamp',
+        description: `Chicago's first 1-day Javascript conference featuring Node, React, Ember, Vue`,
+        homepage_url: 'https://www.chicagojs.org',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#673ab7',
