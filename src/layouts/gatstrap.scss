@@ -8,6 +8,18 @@
 //
 @import './colors.scss';
 
+@media (max-width: 425px) {
+  .display-1 {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 525px) {
+  .display-1 {
+    font-size: 3rem !important;
+  }
+}
+
 // Reassign color vars to semantic color scheme
 $theme-colors: (
     primary: $purple,
