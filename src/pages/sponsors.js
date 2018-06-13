@@ -96,7 +96,7 @@ export default class SponsorshipPage extends React.Component {
             something else, we have a sponsorship opportunity for you.
           </p>
           <div className="text-center mb-5">
-            <a href="mailto:mike@epicfirm.com" className="btn btn-primary">
+            <a href="http://bit.ly/JSCamp2018Sponsor" className="btn btn-primary">
               Sponsor Us
             </a>
           </div>
