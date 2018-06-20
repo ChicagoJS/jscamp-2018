@@ -38,10 +38,10 @@ export default class HomePage extends React.Component {
       <React.Fragment>
         <Helmet
           title="JSCamp Chicago"
-          description={`Chicago's first single track Javascript conference for developers`}
+          description={`Chicago's first single track JavaScript conference for developers`}
         />
         <Section
-          text="JSCamp is a one day single track conference for developers interested in Javascript. Speakers are covering topics such as Node, React, Vue, Ember for both beginners and experts. Come check out Chicago and meet the developers you hear about online!"
+          text="JSCamp is a one day single track conference for developers interested in JavaScript. Speakers are covering topics such as Node, React, Vue, Ember for both beginners and experts. Come check out Chicago and meet the developers you hear about online!"
           cta={() => (
             <div className="text-center">
               <a href={cfpLink} className="mr-2 btn btn-primary">
