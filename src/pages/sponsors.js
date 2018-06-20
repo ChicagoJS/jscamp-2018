@@ -99,6 +99,11 @@ export default class SponsorshipPage extends React.Component {
             <a href="http://bit.ly/JSCamp2018Sponsor" className="btn btn-primary">
               Sponsor Us
             </a>
+            <br />
+            <br />
+            <a href="https://drive.google.com/file/d/1KT2oN9REmW0T-FrSUmePLDWOnoXsrb_0/view?usp=sharing" className="btn btn-primary">
+              Sponsor Prospectus
+            </a>
           </div>
         </div>
         {sponsors.length > 0 && (
