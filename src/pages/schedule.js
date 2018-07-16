@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import get from 'lodash.get'
 
 const schedule = [
   {
@@ -90,8 +92,10 @@ const schedule = [
 
 export default class SchedulePage extends React.Component {
   render() {
+    const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
     return (
       <React.Fragment>
+        <Helmet title={`${siteMetadata.title} | Schedule`} />
         <div class="row">
           <div class="col-md-9 offset-md-2">
             <p className="lead text-primary text-center">
@@ -115,3 +119,15 @@ const ScheduleRow = ({ time, title }) => (
     </div>
   </div>
 )
+
+export const pageQuery = graphql`
+  query ScheduleQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+      }
+    }
+  }
+`

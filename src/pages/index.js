@@ -1,18 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import get from 'lodash.get'
 
 import Section from '../components/Section'
 import ImageRow from '../components/ImageRow'
 
-const TICKET_LINK = 'https://ti.to/chicagojs/chicago-js-camp-2018'
 const CONFIG = {
   title: 'JSCamp 2018',
   date: 'September 22, 2018',
   city: 'Chicago, IL',
   images: {
-    hero: 'https://source.unsplash.com/75vZiZuLHWc/1200x400',
-    // hero: 'https://source.unsplash.com/-icmOdYWXuQ/1200x400',
+    hero: 'https://source.unsplash.com/Nyvq2juw4_o/900x400',
     featured: {
       featured1: 'https://source.unsplash.com/QbD-LmFZ-uk/200x400',
       featured2: 'https://source.unsplash.com/1nashFHSKaU/200x400',
@@ -30,24 +29,21 @@ const CONFIG = {
   },
 }
 
-const cfpLink = 'https://goo.gl/forms/mY67O8XvQpiWSxN52'
-
 export default class HomePage extends React.Component {
   render() {
+    const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
     return (
       <React.Fragment>
         <Helmet
-          title="JSCamp Chicago"
-          description={`Chicago's first single track JavaScript conference for developers`}
+          title={siteMetadata.title}
+          description={siteMetadata.description}
+          keywords={siteMetadata.keywords}
         />
         <Section
           text="JSCamp is a one day single track conference for developers interested in JavaScript. Speakers are covering topics such as Node, React, Vue, Ember for both beginners and experts. Come check out Chicago and meet the developers you hear about online!"
           cta={() => (
             <div className="text-center">
-              <a href={cfpLink} className="mr-2 btn btn-primary">
-                CALL FOR PAPERS
-              </a>
-              <a href={TICKET_LINK} className="btn btn-primary">
+              <a href={siteMetadata.ticketLink} className="btn btn-primary">
                 BUY TICKETS
               </a>
             </div>
@@ -60,8 +56,9 @@ export default class HomePage extends React.Component {
           cta={() => (
             <div className="text-center">
               <a
-                href="mailto:mike@epicfirm.com"
+                href="mailto:mike@chicagojs.org"
                 className="btn btn-primary mr-3"
+                alt="Email us for JSCamp sponsorship info"
               >
                 SPONSOR US
               </a>
@@ -83,3 +80,21 @@ export default class HomePage extends React.Component {
     )
   }
 }
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+        siteUrl
+        author
+        twitter
+        city
+        date
+        ticketLink
+      }
+    }
+  }
+`

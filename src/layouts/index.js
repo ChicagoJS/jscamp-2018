@@ -13,8 +13,7 @@ const CONFIG = {
   date: 'September 22, 2018',
   city: 'Chicago, IL',
   images: {
-    hero: 'https://source.unsplash.com/75vZiZuLHWc/1200x400',
-    // hero: 'https://source.unsplash.com/-icmOdYWXuQ/1200x400',
+    hero: 'https://source.unsplash.com/Nyvq2juw4_o/1200x500',
     featured: {
       featured1: 'https://source.unsplash.com/QbD-LmFZ-uk/300x500',
       featured2: 'https://source.unsplash.com/1nashFHSKaU/300x500',
@@ -74,25 +73,32 @@ const HomePageHero = ({ backgroundImage, title, date, city }) => (
         href="https://goo.gl/forms/mY67O8XvQpiWSxN52"
         className="btn btn-primary"
       >
-        SPEAK AT JSCAMP
+        BUY TICKETS
       </a>
     </div>
   </div>
 )
 
-export default class Template extends React.Component {
+export default class Layout extends React.Component {
   render() {
     const { location, children, data } = this.props
     const isHome = location.pathname === '/'
+
+    const siteMetadata =
+      (this.props.data &&
+        this.props.data.site &&
+        this.props.data.site.siteMetadata) ||
+      {}
+
     return (
       <React.Fragment>
-        <Header title={data.site.siteMetadata.title} />
+        <Header title={siteMetadata.title} />
         {isHome ? (
           <HomePageHero
             backgroundImage={CONFIG.images.hero}
-            title={CONFIG.title}
-            city={CONFIG.city}
-            date={CONFIG.date}
+            title={siteMetadata.title}
+            city={siteMetadata.city}
+            date={siteMetadata.date}
           />
         ) : (
           <PageHeader {...getPageInfo(location.pathname)} />
@@ -104,11 +110,19 @@ export default class Template extends React.Component {
   }
 }
 
-export const query = graphql`
+export const pageQuery = graphql`
   query LayoutQuery {
     site {
       siteMetadata {
         title
+        description
+        keywords
+        siteUrl
+        author
+        twitter
+        city
+        date
+        ticketLink
       }
     }
   }
