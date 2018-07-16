@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import get from 'lodash.get'
 import PageHeader from './'
 
 const sponsors = [
@@ -73,17 +75,19 @@ const sponsors = [
 
 export default class SponsorshipPage extends React.Component {
   render() {
-    const { data } = this.props
-    const { title } = data.site.siteMetadata
+    const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
     return (
       <React.Fragment>
+        <Helmet title={`${siteMetadata.title} | Sponsors`} />
         <div className="container">
-          <h1 className="text-primary text-center">Sponsor {title}</h1>
+          <h1 className="text-primary text-center">
+            Sponsor {siteMetadata.title}
+          </h1>
           <br />
           <p>
-            At {title}, the best JS programmers will gather for a one track, one
-            day conference that will showcase the future of JavaScript and we
-            want you there as a sponsor!
+            At {siteMetadata.title}, the best JS programmers will gather for a
+            one track, one day conference that will showcase the future of
+            JavaScript and we want you there as a sponsor!
           </p>
           <p>
             There are no booths, no exhibit halls and we encourage you to send

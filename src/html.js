@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 
 let stylesStr
 if (process.env.NODE_ENV === 'production') {
@@ -12,7 +11,6 @@ if (process.env.NODE_ENV === 'production') {
 
 export default class HTML extends React.Component {
   render() {
-    const head = Helmet.rewind()
     let css
     if (process.env.NODE_ENV === 'production') {
       css = (
@@ -24,28 +22,57 @@ export default class HTML extends React.Component {
     }
 
     return (
-      <html lang="en">
+      <html {...this.props.htmlAttributes}>
         <head>
-          <meta charSet="utf-8" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
           <link
             href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
             rel="stylesheet"
           />
           {this.props.headComponents}
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+          />
           {css}
           <link
-            href="/img/apple-touch-icon.png"
             rel="apple-touch-icon"
             sizes="180x180"
+            href={`/apple-touch-icon.png`}
           />
-          <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href={`/favicon-32x32.png`}
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href={`/favicon-16x16.png`}
+          />
+          <link rel="manifest" href="/site.webmanifest" />
+          <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#abdff2" />
+          <meta name="msapplication-TileColor" content="#abdff2" />
+          <meta name="theme-color" content="#ffffff" />
+          <meta name="msapplication-config" content={`/browserconfig.xml`} />
+
+          <meta property="og:image:width" content="279" />
+          <meta property="og:image:height" content="279" />
+          <meta
+            property="og:description"
+            content="Chicago's JavaScript community dedicated to helping developers grow by offering guides, mentorship programs, workshops and a yearly conference (JSCamp)."
+          />
+          <meta property="og:title" content="ChicagoJS" />
+          <meta property="og:url" content="https://www.chicagojs.org" />
+          <meta
+            property="og:image"
+            content="https://www.chicagojs.org/og-image.jpg"
+          />
         </head>
-        <body>
+        <body {...this.props.bodyAttributes}>
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}

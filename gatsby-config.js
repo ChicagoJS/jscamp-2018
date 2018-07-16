@@ -1,11 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: 'JSCamp 2018',
-    description: `Chicago's first 1-day Javascript conference featuring Node, React, Ember, Vue`,
+    description: `Chicago's premier JavaScript conference September 22, 2018 featuring Node, React, Ember, Vue, Accessibility and much more.`,
+    keywords: 'JavaScript, JS, Conference, Chicago JavaScript, Chicago, IL',
     siteUrl: 'https://www.chicagojs.org',
     author: 'ChicagoJS',
     twitter: 'chicago_js',
-    adsense: '',
+    city: 'Chicago, IL',
+    date: 'September 22, 2018',
+    ticketLink: 'https://ti.to/chicagojs/chicago-js-camp-2018',
   },
   pathPrefix: '/',
   plugins: [
@@ -17,57 +20,34 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false,
-              wrapperStyle: 'margin-bottom: 1.0725rem;',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: {
-              wrapperStyle: 'margin-bottom: 1.0725rem',
-            },
-          },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'JSCamp 2918',
-        short_name: 'jscamp',
-        description: `Chicago's first 1-day Javascript conference featuring Node, React, Ember, Vue`,
-        homepage_url: 'https://www.chicagojs.org',
-        start_url: '/',
-        background_color: '#fff',
-        theme_color: '#673ab7',
+        name: 'ChicagoJS',
+        short_name: 'ChicagoJS',
         display: 'standalone',
         icons: [
           {
-            src: '/img/android-chrome-192x192.png',
+            src: '/android-chrome-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/img/android-chrome-512x512.png',
+            src: '/android-chrome-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
         ],
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        description: `Chicago's premier JavaScript conference September 22, 2018 featuring Node, React, Ember, Vue, Accessibility and much more.`,
+        homepage_url: 'https://www.chicagojs.org',
+        start_url: '/',
       },
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: '',
+        trackingId: 'REPLACE_ME',
       },
     },
     {
@@ -78,6 +58,12 @@ module.exports = {
         mergeCachingHeaders: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://www.chicagojs.org`,
+      },
+    },
     'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
@@ -85,7 +71,6 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-twitter',
     'gatsby-transformer-sharp',
   ],
 }

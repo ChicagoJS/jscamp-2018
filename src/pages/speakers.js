@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import get from 'lodash.get'
 
 const speakers = [
   {
@@ -36,10 +38,12 @@ const speakers = [
   },
 ]
 
-export default class AttendPage extends React.Component {
+export default class SpeakersPage extends React.Component {
   render() {
+    const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
     return (
       <React.Fragment>
+        <Helmet title={`${siteMetadata.title} | Speakers`} />
         <div className="container">
           <div className="row text-center">
             {speakers.map(speaker => <Speaker {...speaker} />)}
@@ -71,3 +75,21 @@ const Speaker = ({
     <p>{title}</p>
   </div>
 )
+
+export const pageQuery = graphql`
+  query SpeakersQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+        siteUrl
+        author
+        twitter
+        city
+        date
+        ticketLink
+      }
+    }
+  }
+`

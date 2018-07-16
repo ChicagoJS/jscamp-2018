@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import get from 'lodash.get'
 
 export default class CodeOfConductPage extends React.Component {
   render() {
+    const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
     return (
       <React.Fragment>
+        <Helmet title={`${siteMetadata.title} | Code of Conduct`} />
         <h1 className="text-primary">Conference Code of Conduct</h1>
         <p>
           All attendees, speakers, sponsors and volunteers at our conference are
@@ -80,3 +84,15 @@ export default class CodeOfConductPage extends React.Component {
     )
   }
 }
+
+export const pageQuery = graphql`
+  query COCQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+      }
+    }
+  }
+`
