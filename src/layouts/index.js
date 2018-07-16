@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { siteMetadata } from '../../gatsby-config'
+import get from 'lodash.get'
 
 import './gatstrap.scss'
 
@@ -54,7 +54,7 @@ function getPageInfo(pathname) {
   }
 }
 
-const HomePageHero = ({ backgroundImage, title, date, city }) => (
+const HomePageHero = ({ backgroundImage, title, date, city, ticketLink }) => (
   <div
     style={{
       backgroundSize: 'cover',
@@ -69,10 +69,7 @@ const HomePageHero = ({ backgroundImage, title, date, city }) => (
         <br />
         {city}
       </p>
-      <a
-        href="https://goo.gl/forms/mY67O8XvQpiWSxN52"
-        className="btn btn-primary"
-      >
+      <a href={ticketLink} className="btn btn-primary">
         BUY TICKETS
       </a>
     </div>
@@ -83,22 +80,21 @@ export default class Layout extends React.Component {
   render() {
     const { location, children, data } = this.props
     const isHome = location.pathname === '/'
-
-    const siteMetadata =
-      (this.props.data &&
-        this.props.data.site &&
-        this.props.data.site.siteMetadata) ||
-      {}
+    const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
 
     return (
       <React.Fragment>
-        <Header title={siteMetadata.title} />
+        <Header
+          title={siteMetadata.title}
+          ticketLink={siteMetadata.ticketLink}
+        />
         {isHome ? (
           <HomePageHero
             backgroundImage={CONFIG.images.hero}
             title={siteMetadata.title}
             city={siteMetadata.city}
             date={siteMetadata.date}
+            ticketLink={siteMetadata.ticketLink}
           />
         ) : (
           <PageHeader {...getPageInfo(location.pathname)} />

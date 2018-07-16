@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
-const TICKET_LINK = 'https://ti.to/chicagojs/chicago-js-camp-2018'
 const LINKS = [
   {
     label: 'ATTEND',
@@ -39,7 +38,7 @@ const ButtonLink = ({ label, to }) => (
   </a>
 )
 
-export default ({ title, links }) => (
+export default ({ title, ticketLink }) => (
   <nav className="p-4 navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <Link className="navbar-brand mb-0 h1" to="/">
       {title}
@@ -58,7 +57,7 @@ export default ({ title, links }) => (
     <div className="collapse navbar-collapse" id="navbarCollapse">
       <ul className="navbar-nav ml-auto">
         {LINKS.map(link => <NavLink {...link} />)}
-        <ButtonLink label="BUY TICKETS" to={TICKET_LINK} />
+        <ButtonLink label="BUY TICKETS" to={ticketLink} />
       </ul>
     </div>
   </nav>
