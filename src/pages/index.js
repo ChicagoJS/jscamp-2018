@@ -40,7 +40,7 @@ export default class HomePage extends React.Component {
           keywords={siteMetadata.keywords}
         />
         <Section
-          text="JSCamp is a one day single track conference for developers interested in Javascript. Speakers are covering topics such as Node, React, Vue, Ember for both beginners and experts. Come check out Chicago and meet the developers you hear about online!"
+          text="JSCamp is a one day single track conference for developers interested in JavaScript. Speakers are covering topics such as Node, React, Vue, Ember for both beginners and experts. Come check out Chicago and meet the developers you hear about online!"
           cta={() => (
             <div className="text-center">
               <a href={siteMetadata.ticketLink} className="btn btn-primary">
