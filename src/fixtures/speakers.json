@@ -33,6 +33,20 @@
     "location": "Atlanta, GA"
   },
   {
+    "github": "sxwyu",
+    "twitter": "sxywu",
+    "fullName": "Shirley Wu",
+    "bio": "",
+    "title": "Freelance Data Visualization Engineer",
+    "company": "",
+    "photoUrl": "https://i.imgur.com/n95OrJ6.jpg",
+    "talkLength": "30-35 minute talk",
+    "talkTitle": "",
+    "talkDescription": "",
+    "audienceLevel": "",
+    "location": "San Francisco, CA"
+  },
+  {
     "github": "wordofchristian",
     "twitter": "wordofchristian",
     "fullName": "Christian Schlensker",
@@ -90,20 +104,6 @@
     "company": "Expo",
     "photoUrl": "https://i.imgur.com/353phgH.jpg",
     "talkLength": "30-35 minute talk",
-    "talkTitle": "",
-    "talkDescription": "",
-    "audienceLevel": "",
-    "location": "San Francisco, CA"
-  },
-  {
-    "github": "sxwyu",
-    "twitter": "sxywu",
-    "fullName": "Shirley Wu",
-    "bio": "",
-    "title": "Freelance Data Visualization Engineer",
-    "company": "",
-    "photoUrl": "https://i.imgur.com/n95OrJ6.jpg",
-    "talkLength": "",
     "talkTitle": "",
     "talkDescription": "",
     "audienceLevel": "",
@@ -214,7 +214,7 @@
     "title": "Director of Engineering",
     "company": "OfficeLuv",
     "photoUrl": "http://www.andjosh.com/images/page/mustache.jpg",
-    "talkLength": "Lightning talk (5 min)",
+    "talkLength": "5 minute lightning talk",
     "talkTitle": "Dynamically Upgrading Long-Running App Sessions",
     "talkDescription":
       "Do you have a client-side JavaScript app that has long-running user sessions? How can you deliver them a new app version without breaking their session?\nWe have users that stay on our JS app for days or weeks at a time and needed a way to continuously deliver new app versions. This talk will quickly detail our tried and tested methods for delivering new app bundles at just the right time!",
