@@ -5,19 +5,15 @@ import get from 'lodash.get'
 
 const schedule = [
   {
-    time: '7:30AM - 9:00 AM',
-    title: 'Hot Breakfast, Coffee, and Registration',
+    time: '8:00AM - 9:00AM',
+    title: 'Breakfast & Registration',
   },
   {
-    time: '9:00AM - 9:30AM',
-    title: 'Opening Remarks by the JSConf US Curators',
+    time: '9:00AM - 9:15AM',
+    title: 'Opening Remarks by ChicagoJS Camp',
   },
   {
-    time: '9:30AM - 10:00AM',
-    title: 'Opening Remarks by the JSConf US Curators',
-  },
-  {
-    time: '10:00AM - 10:30AM',
+    time: '9:15AM - 10:00AM',
     title: 'TBD',
   },
   {
