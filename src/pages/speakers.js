@@ -44,7 +44,7 @@ const Speaker = ({
       }}
     >
       <img
-        src={photoUrl}
+        src={`https://res.cloudinary.com/chicagojs/image/fetch/w_160,h_160,c_fill,g_face,f_auto/${photoUrl}`}
         alt={`Headshot of ${fullName}`}
         width={160}
         height={160}
