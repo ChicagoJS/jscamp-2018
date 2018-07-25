@@ -17,72 +17,48 @@ const schedule = [
     title: 'TBD',
   },
   {
-    time: '10:30AM - 11:00AM',
+    time: '10:00AM - 10:45AM',
     title: 'TBD',
   },
   {
-    time: '11:00AM - 11:30AM',
+    time: '10:45AM - 11:15AM',
+    title: 'Break',
+  },
+  {
+    time: '11:15AM - 12:00AM',
     title: 'TBD',
   },
   {
-    time: '11:30AM - 12:30PM',
+    time: '12:00PM - 1:30PM',
     title: 'Lunch',
   },
   {
-    time: '12:30PM - 1:00PM',
+    time: '1:30PM - 2:15PM',
     title: 'TBD',
   },
   {
-    time: '1:00PM - 1:30PM',
-    title: 'TBD',
-  },
-  {
-    time: '1:30PM - 2:00PM',
-    title: 'TBD',
-  },
-  {
-    time: '2:00PM - 2:30PM',
-    title: 'TBD',
-  },
-  {
-    time: '2:30PM - 3:00PM',
+    time: '2:15PM - 3:30PM',
     title: 'TBD',
   },
   {
     time: '3:00PM - 3:30PM',
+    title: 'Afternoon Break',
+  },
+  {
+    time: '3:30PM - 4:15PM',
     title: 'TBD',
   },
   {
-    time: '3:30PM - 4:00PM',
+    time: '4:15PM - 5:00PM',
     title: 'TBD',
   },
   {
-    time: '4:00PM - 4:30PM',
-    title: 'TBD',
+    time: '5:00PM - 5:15PM',
+    title: 'Closing Remarks by ChicagoJS Camp',
   },
   {
-    time: '4:30PM - 5:00PM',
-    title: 'TBD',
-  },
-  {
-    time: '5:00PM - 5:30PM',
-    title: 'TBD',
-  },
-  {
-    time: '5:30PM - 6:00PM',
-    title: 'TBD',
-  },
-  {
-    time: '6:00PM - 6:30PM',
-    title: 'Lightning Talks',
-  },
-  {
-    time: '6:30PM - 7:00PM',
-    title: 'Closing Remarks',
-  },
-  {
-    time: '7:00PM - 11:00PM',
-    title: 'Evening Dinner Party',
+    time: '6:30PM',
+    title: 'Evening After Party',
   },
 ]
 
@@ -94,10 +70,7 @@ export default class SchedulePage extends React.Component {
         <Helmet title={`${siteMetadata.title} | Schedule`} />
         <div class="row">
           <div class="col-md-9 offset-md-2">
-            <p className="lead text-primary text-center">
-              Schedule will be released soon!
-            </p>
-            {/* schedule.map(schedule => <ScheduleRow {...schedule} />) */}
+            {schedule.map(schedule => <ScheduleRow {...schedule} />)}
           </div>
         </div>
       </React.Fragment>
