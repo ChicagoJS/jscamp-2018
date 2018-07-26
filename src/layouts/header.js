@@ -14,10 +14,10 @@ const LINKS = [
     label: 'SCHEDULE',
     href: '/schedule',
   },
-  // {
-  //   label: 'SPEAKERS',
-  //   href: '/speakers',
-  // },
+  {
+    label: 'SPEAKERS',
+    href: '/speakers',
+  },
   {
     label: 'SPONSORS',
     href: '/sponsors',
