@@ -10,11 +10,6 @@ const byName = (a, b) => {
   return 0
 }
 
-const byTalkLength = a => {
-  if (a.talkLength.indexOf('lightning') !== -1) return false
-  return true
-}
-
 export default class SpeakersPage extends React.Component {
   render() {
     const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
@@ -23,9 +18,7 @@ export default class SpeakersPage extends React.Component {
         <Helmet title={`${siteMetadata.title} | Speakers`} />
         <div className="container">
           <div className="row text-center">
-            {speakers
-              .filter(byTalkLength)
-              .map(speaker => <Speaker {...speaker} />)}
+            {speakers.map(speaker => <Speaker {...speaker} />)}
           </div>
         </div>
       </React.Fragment>
