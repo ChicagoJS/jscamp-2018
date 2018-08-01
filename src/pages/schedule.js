@@ -124,10 +124,9 @@ const schedule = [
   },
   {
     time: '4:15PM',
-    title: 'TBD',
     fullName: 'Evan Bacon',
     photoUrl: 'https://i.imgur.com/353phgH.jpg',
-    talkTitle: 'The Future of AR & VR in React Native',
+    talkTitle: 'Augmented / Virtual Reality in React Native with Expo',
     talkDescription: '',
   },
   {
