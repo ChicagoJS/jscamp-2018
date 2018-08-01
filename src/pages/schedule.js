@@ -65,7 +65,7 @@ const schedule = [
       "GraphQL has evolved from being a new and cutting edge technology to something that is widely adopted by stable & enterprise companies over the course of the past couple of years. With new tools & services like AWS AppSync, your GraphQL API can be pushed and extended into amazing realms like AR / VR, Machine Learning, Artificial Intelligence, & Geospacial Queries. In this talk, we'll look at some crazy use yet interesting & real world use cases of a bleeding edge GraphQL API, and how we can go about easily implementing this functionality today.",
   },
   {
-    time: '12:00PM - 1:30PM',
+    time: '12:00PM',
     title: 'Lunch',
   },
   {
@@ -170,7 +170,9 @@ const ScheduleRow = ({
 }) => (
   <div className="row border-bottom border-bottom-1 pt-4 pb-4">
     <div className="col-md-2">
-      <p className="font-weight-bold text-primary">{time}</p>
+      <p style={{ margin: 0 }} className="font-weight-bold text-primary">
+        {time}
+      </p>
     </div>
     <div className="col-md-2">
       {photoUrl && (
