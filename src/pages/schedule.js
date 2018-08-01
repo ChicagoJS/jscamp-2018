@@ -25,8 +25,7 @@ const schedule = [
     time: '9:50AM',
     fullName: 'Brandon Willis',
     photoUrl: 'https://i.imgur.com/SILdFM0.jpg',
-    talkTitle:
-      'Turn your database into a fully functioning GraphQL API in just 1 line',
+    talkTitle: 'PostGraphile: Your DB, A Full GraphQL Server, One Line of Code',
     talkDescription: '',
   },
   {
