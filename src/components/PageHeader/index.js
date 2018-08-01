@@ -5,7 +5,7 @@ export default ({ title, imageUrl }) => (
   <div
     style={{
       backgroundSize: 'cover',
-      backgroundImage: `url(${imageUrl})`,
+      backgroundImage: `url(https://res.cloudinary.com/chicagojs/image/fetch/w_1200,h_400,c_fill,g_center,f_auto,dpr_auto/${imageUrl})`,
     }}
     className="Hero py-md-5 mb-3 mb-md-5 position-relative overflow-hidden text-center text-white"
   >

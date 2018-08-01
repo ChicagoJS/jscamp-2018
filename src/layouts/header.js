@@ -26,14 +26,21 @@ const LINKS = [
 
 const NavLink = ({ label, href }) => (
   <li className="nav-item">
-    <Link to={href} className="nav-link">
+    <Link
+      to={href}
+      style={{ color: 'white' }}
+      className="nav-link font-weight-bold"
+    >
       {label}
     </Link>
   </li>
 )
 
 const ButtonLink = ({ label, to }) => (
-  <a href={to} className="ml-2 btn btn-light btn-primary text-primary">
+  <a
+    href={to}
+    className="ml-2 btn btn-light btn-primary text-primary font-weight-bold"
+  >
     {label}
   </a>
 )

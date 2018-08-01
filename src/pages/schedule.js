@@ -154,7 +154,9 @@ export default class SchedulePage extends React.Component {
     return (
       <React.Fragment>
         <Helmet title={`${siteMetadata.title} | Schedule`} />
-        {schedule.map(schedule => <ScheduleRow {...schedule} />)}
+        {schedule.map((schedule, index, arr) => (
+          <ScheduleRow {...schedule} lastRow={index === arr.length - 1} />
+        ))}
       </React.Fragment>
     )
   }
@@ -167,8 +169,11 @@ const ScheduleRow = ({
   talkDescription,
   fullName,
   photoUrl,
+  lastRow,
 }) => (
-  <div className="row border-bottom border-bottom-1 pt-4 pb-4">
+  <div
+    className={`row ${!lastRow && 'border-bottom border-bottom-1'} pt-4 pb-4`}
+  >
     <div className="col-md-2">
       <p style={{ margin: 0 }} className="font-weight-bold text-primary">
         {time}
@@ -177,7 +182,8 @@ const ScheduleRow = ({
     <div className="col-md-2">
       {photoUrl && (
         <img
-          src={photoUrl}
+          src={`https://res.cloudinary.com/chicagojs/image/fetch/w_${AVATAR_SIZE *
+            2},h_${AVATAR_SIZE * 2},c_fill,g_face,f_auto,dpr_auto/${photoUrl}`}
           alt={fullName}
           width={AVATAR_SIZE}
           height={AVATAR_SIZE}
@@ -200,9 +206,8 @@ const ScheduleRow = ({
           {fullName}
         </span>
       )}
-      <h2 style={{ margin: 0 }} className="text-primary">
-        {title || talkTitle}
-      </h2>
+      {title && <p className="m-0 font-weight-bold text-primary">{title}</p>}
+      {talkTitle && <h2 className="m-0 text-primary">{talkTitle}</h2>}
     </div>
   </div>
 )

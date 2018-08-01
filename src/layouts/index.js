@@ -58,7 +58,7 @@ const HomePageHero = ({ backgroundImage, title, date, city, ticketLink }) => (
   <div
     style={{
       backgroundSize: 'cover',
-      backgroundImage: `url(${backgroundImage})`,
+      backgroundImage: `url(https://res.cloudinary.com/chicagojs/image/fetch/w_1200,h_400,c_fill,g_center,f_auto,dpr_auto/${backgroundImage})`,
     }}
     className="position-relative overflow-hidden p-3 p-md-5 text-center bg-light"
   >
