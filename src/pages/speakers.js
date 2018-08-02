@@ -61,7 +61,7 @@ const Speaker = ({
     </p>
     <ul className="list-unstyled">
       <li className="d-inline-block">
-        <a href={github}>
+        <a href={`https://github.com/${github}`}>
           <img
             width={48}
             height={48}
@@ -71,7 +71,7 @@ const Speaker = ({
         </a>
       </li>
       <li className="d-inline-block">
-        <a href={twitter}>
+        <a href={`https://twitter.com}/${twitter}`}>
           <img
             width={48}
             height={48}
