@@ -47,8 +47,8 @@ const ButtonLink = ({ label, to }) => (
 
 export default ({ title, ticketLink }) => (
   <nav className="p-4 navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-    <Link className="navbar-brand mb-0 h1" to="/">
-      {title}
+    <Link className="navbar-brand mb-0 h1 font-weight-bold" to="/">
+      JSCAMP CHICAGO
     </Link>
     <button
       className="navbar-toggler"
