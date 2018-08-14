@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash.get'
-import speakers from '../fixtures/speakers.json'
 
 const byName = (a, b) => {
   if (a.fullName < b.fullName) return -1
@@ -12,7 +11,9 @@ const byName = (a, b) => {
 
 export default class SpeakersPage extends React.Component {
   render() {
+    const speakers = get(this.props, 'data.allSpeakersJson.edges', [])
     const siteMetadata = get(this.props, 'data.site.siteMetadata', {})
+
     return (
       <React.Fragment>
         <Helmet title={`${siteMetadata.title} | Speakers`} />
@@ -27,14 +28,16 @@ export default class SpeakersPage extends React.Component {
 }
 
 const Speaker = ({
-  fullName,
-  bio,
-  title,
-  company,
-  photoUrl,
-  location,
-  github,
-  twitter,
+  speaker: {
+    fullName,
+    bio,
+    title,
+    company,
+    photoUrl,
+    location,
+    github,
+    twitter,
+  },
 }) => (
   <div className="col-lg-4 text-center" style={{ marginBottom: 40 }}>
     <div
@@ -86,6 +89,20 @@ const Speaker = ({
 
 export const pageQuery = graphql`
   query SpeakersQuery {
+    allSpeakersJson {
+      edges {
+        speaker: node {
+          github
+          twitter
+          fullName
+          bio
+          title
+          company
+          photoUrl
+          location
+        }
+      }
+    }
     site {
       siteMetadata {
         title
