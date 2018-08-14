@@ -19,7 +19,8 @@ const schedule = [
     talkTitle: 'Data Visualization for JS Developers',
     photoUrl: 'https://i.imgur.com/n95OrJ6.jpg',
     fullName: 'Shirley Wu',
-    talkDescription: '',
+    talkDescription:
+      "As front-end developers, we may be asked to create a visualization with D3.js. If the experience goes well, we may find ourselves falling in love with D3.js and looking to build more data visualizations in our spare or work time. But how can we go from fiddling with D3.js code to building full, thoughtful, and communicative visualizations for the web? In this talk, Shirley will highlight the challenges she faced and lessons she learned while creating custom visualizations.  She'll provide guidance on how to go beyond the code: how to explore the data for insights, to design a visualization around that insight, and to translate that design into code.",
   },
   {
     time: '9:50AM',

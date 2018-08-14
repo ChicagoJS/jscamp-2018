@@ -71,7 +71,7 @@ const Speaker = ({
         </a>
       </li>
       <li className="d-inline-block">
-        <a href={`https://twitter.com}/${twitter}`}>
+        <a href={`https://twitter.com/${twitter}`}>
           <img
             width={48}
             height={48}
