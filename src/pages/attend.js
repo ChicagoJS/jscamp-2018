@@ -8,10 +8,12 @@ import ImageRow from '../components/ImageRow'
 const images = [
   'tXmc2mVDxJc',
   'WhayBiwx8Ng',
+  /*
   'tnv84LOjes4',
   'ZtA5lS-dHuc',
   'mw2JSzUxVLg',
   'ZOG7Zj7cfR8',
+  */
   'ewtdGmhY1vI',
 ]
 
@@ -23,19 +25,20 @@ export default class AttendPage extends React.Component {
     return (
       <React.Fragment>
         <Helmet
-          title={`${siteMetadata.title} | Attend`}
+          title={`${siteMetadata.title} | Attendee Info`}
           description="Attend Chicago JSCamp at 300 S. Riverside Plaza, Suite 1000 on September 22, 2018"
         />
-        <h1 className="text-primary">300 S. Riverside Plaza Suite 1000</h1>
-        <p class="lead">
-          The conference is taking place 10 stories above the Chicago River.
-          Enjoy beautiful views of the city as well as the river!
-        </p>
-        <p class="lead">
-          Chicago is known for its skyscrapers, museums, parks, beaches and
-          river. There's so much to explore on your days before / after the
-          conference.
-        </p>
+        <h1 className="text-primary">Attendee Information</h1>
+        <h3 className="text-primary">Venue Location</h3>
+        <p>The venue for Chicago JSCamp 2018 is Cars.com, located at <a href="http://bit.ly/cjs18-map">300 S Riverside, 10th Floor, Chicago IL 60606</a></p>
+        <p>The North entrance of the building will be closed due to construction.  There will be signs directing visitors to the West Walkway, through which you can enter the building.</p>
+        <p><a href="http://bit.ly/cjs18Building-Map">MAP - ChicagoJS Venue West Walkway</a></p>
+        <h3 className="text-primary">Arrival</h3>
+        <p>Upon arrival, please check in with security.  You will be asked for picture ID.</p>
+        <p>Breakfast will start at 8am.  You can view more about the <Link to="/schedule/">daily schedule here.</Link></p>
+        <h2 className="text-primary">Lunch</h2>
+        <p>Lunch for attendees will be on your own.  We have created a map with links to many options for lunch within a short walk from the venue.</p>
+        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1-FKP36FEICwZwxPJPXkvhuzLNhlcVFIt" width="480" height="480"></iframe>
         <ImageRow images={images.map(i => template.replace('$0', i))} />
       </React.Fragment>
     )
