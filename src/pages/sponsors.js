@@ -1,4 +1,5 @@
 import React from 'react'
+import cloudinaryUrl from 'cloudinary-microurl'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash.get'
@@ -15,34 +16,58 @@ const sponsors = [
   //     },
   //   ],
   // },
-  // {
-  //   title: 'Gold Sponsors',
-  //   width: 300,
-  //   items: [
-  //     {
-  //       imageUrl:
-  //         'https://infinite.red/thesis/files/8rjpmbit4b-platinumsquarespace2x.png',
-  //     },
-  //     {
-  //       imageUrl:
-  //         'https://infinite.red/thesis/files/5ybzzpvoty-goldformidable2x.png',
-  //     },
-  //     {
-  //       imageUrl:
-  //         'https://infinite.red/thesis/files/nttpeelzbv-goldamazonaws2x.png',
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: 'Silver Sponsors',
-  //   width: 270,
-  //   items: [
-  //     {
-  //       imageUrl:
-  //         'https://infinite.red/thesis/files/8rjpmbit4b-platinumsquarespace2x.png',
-  //     },
-  //   ],
-  // },
+  {
+    title: 'Gold Sponsors',
+    width: 300,
+    items: [
+      {
+        name: 'Accenture Interactive',
+        cloudinary: 'Accenture',
+      },
+      {
+        name: 'Cars.Com',
+        cloudinary: 'CarsDotCom',
+      },
+      // {
+      //   name: 'Server Central',
+      //   cloudinary: 'ServerCentral'
+      // }
+    ],
+  },
+  {
+    title: 'Silver Sponsors',
+    width: 270,
+    items: [
+      {
+        name: 'Fraight AI',
+        cloudinary: 'FraightAi',
+      },
+      {
+        name: 'One North',
+        cloudinary: 'OneNorth',
+      },
+      {
+        name: 'Braintree',
+        cloudinary: 'Braintree',
+      },
+      // {
+      //   name: 'Fly IO',
+      //   cloudinary: 'Fly'
+      // },
+      {
+        name: 'Active Campaign',
+        cloudinary: 'ActiveCampaign',
+      },
+      {
+        name: 'Quik Order',
+        cloudinary: 'QuikOrder',
+      },
+      // {
+      //   name: 'Draftbit',
+      //   cloudinary: 'Draftbit'
+      // },
+    ],
+  },
   // {
   //   title: 'Bronze Sponsors',
   //   width: 200,
@@ -127,18 +152,28 @@ export default class SponsorshipPage extends React.Component {
   }
 }
 
+const buildCloudinaryUrl = ({ name, width }) => {
+  return cloudinaryUrl(`/2018Sponsors/${name}`, {
+    secure: true,
+    cloud_name: 'chicagojs',
+    quality: 80,
+    format: 'auto',
+    crop: 'fill',
+    width,
+  })
+}
+
 const SponsorRow = ({ title, items, width }) => (
   <div className="p2 border-bottom border-bottom-1 mt-4 mb-2">
-    <p className="font-weight-bold text-primary">{title}</p>
+    <h2 className="font-weight-bold text-primary">{title}</h2>
     <div>
       {items.map(item => (
-        <a href="#">
-          <img
-            className="d-inline-block px-2"
-            width={width}
-            src={item.imageUrl}
-          />
-        </a>
+        <img
+          className="d-inline-block px-2"
+          width={width}
+          src={buildCloudinaryUrl({ name: item.cloudinary, width })}
+          alt={item.name}
+        />
       ))}
     </div>
   </div>

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Peter Piekarczyk <peter@chicagojs.org>",
   "dependencies": {
+    "cloudinary-microurl": "^1.4.0",
     "gatsby": "^1.9.130",
     "gatsby-link": "^1.6.31",
     "gatsby-plugin-canonical-urls": "^1.0.18",
