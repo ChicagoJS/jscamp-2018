@@ -41,10 +41,22 @@ const sponsors = [
       {
         name: 'Fraight AI',
         cloudinary: 'FraightAi',
+        url:
+          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100/v1537038153/2018Sponsors/FraightAI.png',
+        options: {
+          co_rgb: '000000',
+          e_colorize: '100',
+        },
       },
       {
         name: 'One North',
         cloudinary: 'OneNorth',
+        url:
+          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100,f_auto/v1537038153/2018Sponsors/OneNorth.svg',
+        options: {
+          co_rgb: '000000',
+          e_colorize: '100',
+        },
       },
       {
         name: 'Braintree',
@@ -61,6 +73,10 @@ const sponsors = [
       {
         name: 'Quik Order',
         cloudinary: 'QuikOrder',
+      },
+      {
+        name: 'Hash Rocket',
+        cloudinary: 'HashRocket',
       },
       // {
       //   name: 'Draftbit',
@@ -152,7 +168,8 @@ export default class SponsorshipPage extends React.Component {
   }
 }
 
-const buildCloudinaryUrl = ({ name, width }) => {
+const buildCloudinaryUrl = ({ name, width, url, ...rest }) => {
+  if (url) return url
   return cloudinaryUrl(`/2018Sponsors/${name}`, {
     secure: true,
     cloud_name: 'chicagojs',
@@ -160,6 +177,7 @@ const buildCloudinaryUrl = ({ name, width }) => {
     format: 'auto',
     crop: 'fill',
     width,
+    ...rest,
   })
 }
 
@@ -171,7 +189,12 @@ const SponsorRow = ({ title, items, width }) => (
         <img
           className="d-inline-block px-2"
           width={width}
-          src={buildCloudinaryUrl({ name: item.cloudinary, width })}
+          src={buildCloudinaryUrl({
+            url: item.url,
+            name: item.cloudinary,
+            width,
+            options: item.options,
+          })}
           alt={item.name}
         />
       ))}
