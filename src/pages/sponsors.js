@@ -28,10 +28,14 @@ const sponsors = [
         name: 'Cars.Com',
         cloudinary: 'CarsDotCom',
       },
-      // {
-      //   name: 'Server Central',
-      //   cloudinary: 'ServerCentral'
-      // }
+      {
+        name: 'Server Central',
+        cloudinary: 'ServerCentral',
+      },
+      {
+        name: 'Turing Group',
+        cloudinary: 'TuringGroup',
+      },
     ],
   },
   {
