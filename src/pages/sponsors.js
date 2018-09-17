@@ -66,10 +66,10 @@ const sponsors = [
         name: 'Braintree',
         cloudinary: 'Braintree',
       },
-      // {
-      //   name: 'Fly IO',
-      //   cloudinary: 'Fly'
-      // },
+      {
+        name: 'Fly IO',
+        cloudinary: 'Fly',
+      },
       {
         name: 'Active Campaign',
         cloudinary: 'ActiveCampaign',
@@ -82,10 +82,10 @@ const sponsors = [
         name: 'Hash Rocket',
         cloudinary: 'HashRocket',
       },
-      // {
-      //   name: 'Draftbit',
-      //   cloudinary: 'Draftbit'
-      // },
+      {
+        name: 'Draftbit',
+        cloudinary: 'Draftbit',
+      },
     ],
   },
   // {
