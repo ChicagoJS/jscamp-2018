@@ -83,6 +83,10 @@ const sponsors = [
         cloudinary: 'HashRocket',
       },
       {
+        name: 'Dragon Spears',
+        cloudinary: 'DragonSpears',
+      },
+      {
         name: 'Draftbit',
         cloudinary: 'Draftbit',
       },
