@@ -46,7 +46,7 @@ const sponsors = [
         name: 'Fraight AI',
         cloudinary: 'FraightAi',
         url:
-          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100/v1537038153/2018Sponsors/FraightAI.png',
+          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100,f_auto,w_270/v1537038153/2018Sponsors/FraightAI.png',
         options: {
           co_rgb: '000000',
           e_colorize: '100',
@@ -56,7 +56,7 @@ const sponsors = [
         name: 'One North',
         cloudinary: 'OneNorth',
         url:
-          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100,f_auto/v1537038153/2018Sponsors/OneNorth.svg',
+          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100,f_auto,w_270/v1537038153/2018Sponsors/OneNorth.png',
         options: {
           co_rgb: '000000',
           e_colorize: '100',
@@ -88,7 +88,13 @@ const sponsors = [
       },
       {
         name: 'Draftbit',
+        url:
+          'https://res.cloudinary.com/chicagojs/image/upload/co_rgb:000000,e_colorize:100,f_auto,w_270/v1537038153/2018Sponsors/Draftbit.png',
         cloudinary: 'Draftbit',
+      },
+      {
+        name: 'Next Capital',
+        cloudinary: 'NextCapital',
       },
     ],
   },
