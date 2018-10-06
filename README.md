@@ -2,4 +2,4 @@
 [![dependency Status](https://img.shields.io/david/jaxx2104/gatsby-starter-bootstrap.svg?style=flat-square)](https://david-dm.org/jaxx2104/gatsby-starter-bootstrap#info=dependencies)
 [![Known Vulnerabilities](https://snyk.io/test/github/jaxx2104/gatsby-starter-bootstrap/badge.svg)](https://snyk.io/test/github/jaxx2104/gatsby-starter-bootstrap)
 
-# JSCamp
+# ChicagoJS Camp 2018
